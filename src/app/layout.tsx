@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import {  Lora } from "next/font/google";
+import { Lora } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const loraFont = Lora({subsets: ['latin']});
+const loraFont = Lora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Journey",
@@ -15,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={loraFont.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={loraFont.className}>{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }
