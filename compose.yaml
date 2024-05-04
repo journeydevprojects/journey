@@ -1,14 +1,24 @@
 services:
-  journeydb:
-    image: postgres:16
+  postgres:
+    image: "postgres:16-alpine"
     environment:
-      POSTGRES_DB: journeydb
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
     ports:
-      - "9876:5432"
+      - "6543:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  pg_proxy: # needed because the vercel/neon drizzle driver connects via websocket
+    image: ghcr.io/neondatabase/wsproxy:latest
+    environment:
+      APPEND_PORT: "postgres:5432"
+      ALLOW_ADDR_REGEX: ".*"
+      LOG_TRAFFIC: "true"
+    ports:
+      - "6544:80"
+    depends_on:
+      - postgres
 
 volumes:
   postgres_data:

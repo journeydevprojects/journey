@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1714843412831,
+      "tag": "0000_skinny_slayback",
+      "breakpoints": true
+    }
+  ]
+}
