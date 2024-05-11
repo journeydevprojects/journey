@@ -17,7 +17,7 @@ Once docker is installed you can run a local persistent postgres db using
 docker-compose up -d
 ```
 
-Once node is installed you can install app interdependencies using npm
+Once node is installed you can install app dependencies using npm
 
 ```shell
 npm install
