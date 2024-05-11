@@ -30,6 +30,14 @@ With the DB and dependencies setup, you can run the required database migrations
 npm run migrate
 ```
 
+Next copy [.env.example](.env.example) to a new file `.env.local`
+
+```shell
+cp .env.example .env.local
+```
+
+And then replace the variables with the appropriate values in `.env.local`.
+
 Finally, you can run the app locally on http://localhost:3000 by running
 
 ```shell
