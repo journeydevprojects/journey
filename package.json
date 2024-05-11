@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "npx drizzle-kit generate:pg && npx tsx src/lib/migrate.ts -y"
+    "migrate": "npx drizzle-kit generate:pg && npx tsx src/lib/migrate.ts -y",
+    "seed": "npx tsx src/lib/seed.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.0.3",

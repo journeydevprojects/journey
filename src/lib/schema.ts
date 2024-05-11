@@ -5,8 +5,8 @@ export const userRoles = pgTable(
   {
     id: varchar("id", { length: 32 }).primaryKey(),
     name: varchar("name", { length: 32 }).notNull(),
-    createdAt: timestamp("createdAt").defaultNow().notNull(),
-    modifiedAt: timestamp("modifiedAt").defaultNow().notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    modifiedAt: timestamp("modified_at").defaultNow().notNull(),
   },
   (userRoles) => {
     return {

@@ -24,12 +24,6 @@ Once node is installed you can install app dependencies using npm
 npm install
 ```
 
-With the DB and dependencies setup, you can run the required database migrations for the app by running
-
-```shell
-npm run migrate
-```
-
 Next copy [.env.example](.env.example) to a new file `.env.local`
 
 ```shell
@@ -37,6 +31,18 @@ cp .env.example .env.local
 ```
 
 And then replace the variables with the appropriate values in `.env.local`.
+
+With the DB, dependencies, and ENV setup, you can run the required database migrations for the app by running
+
+```shell
+npm run migrate
+```
+
+Then run the seed script to populate the db with some seed data
+
+```shell
+npm run seed
+```
 
 Finally, you can run the app locally on http://localhost:3000 by running
 
